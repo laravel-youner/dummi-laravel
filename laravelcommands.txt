@@ -1,0 +1,54 @@
+
+"Run laravel"
+> php artisan serve
+
+"Create models"
+> php artisan make:model Seller
+> php artisan make:model Category
+
+"Install library in composer"
+> composer require laravel/passport "9.*"
+"Change versions in composer json file"
+> composer update
+
+"Create controllers"
+> php artisan make:controller User/UserController -r
+
+"See routes"
+> php artisan route-list
+
+"Create migrations"
+> php artisan make:migration create_transactions_table --table=transactions
+> php artisan make:migration create_category_product_table --table=category_product
+
+"Migrate tables"
+> php artisan migrate
+
+"Seed your database"
+> php artisan migrate:fresh --seed
+"After seeding see data in database"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
