@@ -75,6 +75,7 @@ trait ApiResponser
         return $collection;
     }
 
+    // Paging response
     protected function paginate(Collection $collection)
     {
         $rules = [
@@ -109,6 +110,7 @@ trait ApiResponser
         return $transformation->toArray();
     }
 
+    // Caching response
     protected function cacheResponse($data)
     {
         $url = request()->url();
