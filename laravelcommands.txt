@@ -28,6 +28,10 @@
 > php artisan migrate:fresh --seed
 "After seeding see data in database"
 
+"Create mailing"
+> php artisan make:mail [class_name]
+> php artisan make:mail [class_name] -m [folder_name.file_name]
+
 
 
 

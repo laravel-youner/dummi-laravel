@@ -28,6 +28,7 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            'signature:X-Application-Name',
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -38,7 +39,9 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            'signature:X-Application-Name',
+            //'throttle:60,1', //  60 times in 1 minute
+            'throttle:90,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -59,8 +62,10 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        //'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'throttle' => \App\Http\Middleware\CustomThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'signature' => \App\Http\Middleware\SignatureMiddleware::class,
     ];
 
     /**
@@ -74,7 +79,8 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\Authenticate::class,
-        \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        //\Illuminate\Routing\Middleware\ThrottleRequests::class,
+        \App\Http\Middleware\CustomThrottleRequests::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
