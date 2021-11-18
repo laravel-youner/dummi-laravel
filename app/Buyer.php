@@ -8,7 +8,7 @@ use App\Transformers\BuyerTransformer;
 
 class Buyer extends User
 {
-    public $transformer = BuyerTransformer::class;
+    public $transformer = BuyerTransformer::class; // linking model and transformer
 
     protected static function boot()
     {

@@ -13,7 +13,7 @@ class Product extends Model
     const AVAILABLE_PRODUCT = 'available';
     const UNAVAILABLE_PRODUCT = 'unavailable';
 
-    public $transformer = ProductTransformer::class;
+    public $transformer = ProductTransformer::class; // linking model and transformer
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name',

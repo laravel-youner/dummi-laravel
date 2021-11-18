@@ -10,7 +10,7 @@ class Category extends Model
 {
     use SoftDeletes;
 
-    public $transformer = CategoryTransformer::class;
+    public $transformer = CategoryTransformer::class; // linking model and transformer
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'name',

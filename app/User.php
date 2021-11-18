@@ -20,7 +20,7 @@ class User extends Authenticatable
     const ADMIN_USER = 'true';
     const REGULAR_USER = 'false';
 
-    public $transformer = UserTransformer::class;
+    public $transformer = UserTransformer::class; // linking model and transformer
     protected $table = 'users';
     protected $dates = ['deleted_at'];
 
