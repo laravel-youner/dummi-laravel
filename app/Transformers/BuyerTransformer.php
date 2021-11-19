@@ -52,6 +52,7 @@ class BuyerTransformer extends TransformerAbstract
         ];
     }
 
+    // Transform Input
     public static function originalAttribute($index)
     {
         $attributes = [
@@ -67,6 +68,7 @@ class BuyerTransformer extends TransformerAbstract
         return isset($attributes[$index]) ? $attributes[$index] : null;
     }
 
+    // Transform Input
     public static function transformedAttribute($index)
     {
         $attributes = [
