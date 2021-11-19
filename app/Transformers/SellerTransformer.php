@@ -22,7 +22,7 @@ class SellerTransformer extends TransformerAbstract
             'creationDate' => (string)$seller->created_at,
             'lastChange' => (string)$seller->updated_at,
             'deletedDate' => isset($seller->deleted_at) ? (string) $seller->deleted_at : null,
-
+            // HATEOAS
             'links' => [
                 [
                     'rel' => 'self',

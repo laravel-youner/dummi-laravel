@@ -25,7 +25,7 @@ class ProductTransformer extends TransformerAbstract
             'creationDate' => (string)$product->created_at,
             'lastChange' => (string)$product->updated_at,
             'deletedDate' => isset($product->deleted_at) ? (string) $product->deleted_at : null,
-
+            // HATEOAS
             'links' => [
                 [
                     'rel' => 'self',

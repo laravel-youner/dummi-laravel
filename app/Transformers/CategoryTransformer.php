@@ -21,7 +21,7 @@ class CategoryTransformer extends TransformerAbstract
             'creationDate' => (string)$category->created_at,
             'lastChange' => (string)$category->updated_at,
             'deletedDate' => isset($category->deleted_at) ? (string) $category->deleted_at : null,
-
+            // HATEOAS
             'links' => [
                 [
                     'rel' => 'self',

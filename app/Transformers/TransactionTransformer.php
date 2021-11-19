@@ -22,7 +22,7 @@ class TransactionTransformer extends TransformerAbstract
             'creationDate' => (string)$transaction->created_at,
             'lastChange' => (string)$transaction->updated_at,
             'deletedDate' => isset($transaction->deleted_at) ? (string) $transaction->deleted_at : null,
-
+            // HATEOAS
             'links' => [
                 [
                     'rel' => 'self',

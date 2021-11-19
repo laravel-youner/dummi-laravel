@@ -22,7 +22,7 @@ class BuyerTransformer extends TransformerAbstract
             'creationDate' => (string)$buyer->created_at,
             'lastChange' => (string)$buyer->updated_at,
             'deletedDate' => isset($buyer->deleted_at) ? (string) $buyer->deleted_at : null,
-
+            // HATEOAS
             'links' => [
                 [
                     'rel' => 'self',
