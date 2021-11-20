@@ -33,9 +33,11 @@
 > php artisan make:mail [class_name] -m [folder_name.file_name]
 
 "Create transformers"
-
 > php artisan make:transformer [class_name]
 
+"Import auth module in Laravel project"
+> composer require 'laravel/ui:*'
+> php artisan ui vue --auth
 
 
 

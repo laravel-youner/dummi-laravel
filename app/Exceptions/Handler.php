@@ -109,6 +109,7 @@ class Handler extends ExceptionHandler
             }
         }
 
+        //  Token mismatch exception
         if ($exception instanceof TokenMismatchException) {
             return redirect()->back()->withInput($request->input());
         }
@@ -157,6 +158,7 @@ class Handler extends ExceptionHandler
         return $this->errorResponse($errors, 422);
     }
 
+    // Returning HTML and Redirecting
     private function isFrontend($request)
     {
         return $request->acceptsHtml() && collect($request->route()->middleware())->contains('web');
