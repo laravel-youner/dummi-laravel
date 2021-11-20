@@ -39,7 +39,14 @@
 > composer require 'laravel/ui:*'
 > php artisan ui vue --auth
 
+"Updating dependencies after updating Laravel"
+> composer require guzzlehttp/guzzle laravel/passport spatie/laravel-fractal barryvdh/laravel-cors
 
+"Configuring Cors package"
+> php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
+
+Copied File [/vendor/barryvdh/laravel-cors/config/cors.php] To [/config/cors.php]
+Publishing complete.
 
 
 
