@@ -12,7 +12,7 @@ class BuyerProductController extends ApiController
     {
         parent::__construct(); // Protect all route
 
-        $this->middleware('scope:read-general')->only('index');
+        $this->middleware('scope:read-general')->only('index'); // OAuth Scope
         $this->middleware('can:view,buyer')->only('index');
     }
 

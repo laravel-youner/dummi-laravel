@@ -12,7 +12,7 @@ class SellerController extends ApiController
     {
         parent::__construct(); // Protect all route
 
-//        $this->middleware('scope:read-general')->only('show');
+        $this->middleware('scope:read-general')->only('show'); // OAuth Scope
 //        $this->middleware('can:view,seller')->only('show');
     }
 

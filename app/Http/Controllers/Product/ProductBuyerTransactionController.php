@@ -17,7 +17,7 @@ class ProductBuyerTransactionController extends ApiController
         parent::__construct(); // Protect all route
 
         $this->middleware('transform.input:' . TransactionTransformer::class)->only(['store']);
-        $this->middleware('scope:purchase-product')->only(['store']);
+        $this->middleware('scope:purchase-product')->only(['store']); // OAuth Scope
         $this->middleware('can:purchase,buyer')->only('store');
     }
 
