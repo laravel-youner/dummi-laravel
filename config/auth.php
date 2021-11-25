@@ -42,9 +42,9 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport', // Configure Auth System
             'provider' => 'users',
-            'hash' => false,
+            // 'hash' => false,
         ],
     ],
 

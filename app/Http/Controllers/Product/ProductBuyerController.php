@@ -10,9 +10,9 @@ class ProductBuyerController extends ApiController
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); // Protect all route
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,7 @@ class ProductBuyerController extends ApiController
     public function index(Product $product)
     {
         $this->allowedAdminAction();
-        
+
         $buyers = $product->transactions()
             ->with('buyer')
             ->get()

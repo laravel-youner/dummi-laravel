@@ -14,9 +14,9 @@ class UserController extends ApiController
 {
     public function __construct()
     {
-//        $this->middleware('client.credentials')->only(['resend']);
-//        $this->middleware('auth:api')->except(['showRegisterForm', 'store', 'verify', 'resend']);
-       $this->middleware('transform.input:' . UserTransformer::class)->only(['update']);
+        $this->middleware('client.credentials')->only(['resend']); // Client Credential to protect some routes
+        $this->middleware('auth:api')->except(['showRegisterForm', 'store', 'verify', 'resend']);
+        $this->middleware('transform.input:' . UserTransformer::class)->only(['update']);
 //        $this->middleware('scope:manage-account')->only(['show', 'update']);
 //        $this->middleware('can:view,user')->only('show');
 //        $this->middleware('can:update,user')->only('update');

@@ -16,7 +16,7 @@ class SellerProductController extends ApiController
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); // Protect all route
 
         $this->middleware('transform.input:' . ProductTransformer::class)->only(['store', 'update']);
         $this->middleware('scope:manage-products')->except('index');
@@ -26,7 +26,7 @@ class SellerProductController extends ApiController
         $this->middleware('can:edit-product,seller')->only('update');
         $this->middleware('can:delete-product,seller')->only('destroy');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +41,7 @@ class SellerProductController extends ApiController
         }
 
         throw new AuthorizationException('Invalid scope(s)');
-        
+
     }
 
     /**
@@ -139,7 +139,7 @@ class SellerProductController extends ApiController
     protected function checkSeller(Seller $seller, Product $product)
     {
         if ($seller->id != $product->seller_id) {
-            throw new HttpException(422, 'The specified seller is not the actual seller of the product');            
+            throw new HttpException(422, 'The specified seller is not the actual seller of the product');
         }
     }
 }

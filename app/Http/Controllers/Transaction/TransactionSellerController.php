@@ -10,11 +10,12 @@ class TransactionSellerController extends ApiController
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); // Protect all route
+
         $this->middleware('scope:read-general')->only('index');
         $this->middleware('can:view,transaction')->only('index');
     }
-    
+
     /**
      * Display a listing of the resource.
      *

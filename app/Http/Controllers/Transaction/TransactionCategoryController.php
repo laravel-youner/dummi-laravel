@@ -10,9 +10,9 @@ class TransactionCategoryController extends ApiController
 {
     public function __construct()
     {
-        $this->middleware('client.credentials')->only(['index']);
+        $this->middleware('client.credentials')->only(['index']); // Client Credential to protect some routes
     }
-    
+
     /**
      * Display a listing of the resource.
      *

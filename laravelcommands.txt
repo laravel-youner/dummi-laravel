@@ -15,7 +15,7 @@
 > php artisan make:controller User/UserController -r
 
 "See routes"
-> php artisan route-list
+> php artisan route:list
 
 "Create migrations"
 > php artisan make:migration create_transactions_table --table=transactions
@@ -48,7 +48,41 @@
 Copied File [/vendor/barryvdh/laravel-cors/config/cors.php] To [/config/cors.php]
 Publishing complete.
 
+"Install passport"
+> php artisan passport:install
 
+"Obtain and use token"
+> php artisan passport:client
+ Which user ID should the client be assigned to?:
+ > 1
+ What should we name the client?:
+ > client
+ Where should we redirect the request after authorization? [http://localhost/auth/callback]:
+ >
+New client created successfully.
+Client ID: 3
+Client secret: i2DvCPY8PHnLjZXQlinIecyDn21dI2IzDnttACp5
+
+> php artisan passport:client --password
+What should we name the password grant client? [Dummy-Laravel Password Grant Client]:
+ > password
+ Which user provider should this client use to retrieve users? [users]:
+  [0] users
+ >
+Password grant client created successfully.
+Client ID: 4
+Client secret: V3uzDEz04x2fpLXgFOQ65BHdSTstRboKnZiEJmYB
+
+"Prepare API to use passport components"
+> php artisan vendor:publish --tag=passport-components
+> npm install
+
+> php artisan passport:client --personal
+What should we name the personal access client? [Dummy-Laravel Personal Access Client]:
+ >
+Personal access client created successfully.
+Client ID: 5
+Client secret: l3YrbUSbYY4fmjsoUVBuZj7SwF1zkO5LIrnDZHVR
 
 
 

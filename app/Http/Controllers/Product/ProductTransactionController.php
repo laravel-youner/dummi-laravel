@@ -10,9 +10,9 @@ class ProductTransactionController extends ApiController
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); // Protect all route
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,7 @@ class ProductTransactionController extends ApiController
     public function index(Product $product)
     {
         $this->allowedAdminAction();
-        
+
         $transactions = $product->transactions;
 
         return $this->showAll($transactions);

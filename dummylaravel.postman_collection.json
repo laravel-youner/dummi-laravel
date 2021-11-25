@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "8e33ba5d-bd84-49be-86e6-e6f451d35c1c",
+		"name": "dummylaravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "oauth/token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "i2DvCPY8PHnLjZXQlinIecyDn21dI2IzDnttACp5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "api/categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiY2EzNDlhMzZjMmMxZDgxZDM2NmMxMDU5MjAwMDQ3OTNmZTY0YTQzMTRmYmRkYzZhYWNhYWMyY2ZiMjc4MGQ5OTMxMDYzN2FjNjhiMWE5ZjAiLCJpYXQiOjE2Mzc3NTc3OTAsIm5iZiI6MTYzNzc1Nzc5MCwiZXhwIjoxNjM3NzU4MDkwLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.mH6PDz2ZI89Q7-J_wQlfJwUCXixxeDNuqOMJoXn15N8D7I1k9NyVknrOh-Pa_8lsjb2WpSIMyBFZrEyO4pqJcpjb05FpJawICeWwQKbpCQk5DxPYivmY7svSJi1JOf9z19HqswTsIXgT5YrQjKZjviA9E9aAmvH8YETOl5cJBZct314gOp-ZRT78M_2_AzfM7TMrXT0Z7b3RFq81KlRvBAFg5cO7kLqRay7Q7HbJi_KFLKFuZjXiVop769Q96rOgFjH_Ouc-xSvdoL5mgnSD9fcw6F9uJrSXJQw2fapj4yKja00C79luJseX0Ev0E7XB68H7FrkvTeU-fxH_PE7yW15w3yL_4gyoMvI6VcBSNmzikVJRRuRg62bRVpKDNWYQzJU2c0MJR0QjPwvZS9_41AitUoyhEm1fFB5W5Yp68VfJJeV8j5E2Epb_wpR-cL3oan9O3ZobY-imtpNgRzR_dH84h9YAqPiqhB-hY3-3ilzvehmwYFnvSxwgiKcGbbzrHH-0j8eEA5unEWT_5LK8X-C_FIaHP0x14swhQ_sUSN7RKYxs1n0-CwAfo_vJXiOAzy9CATbB5GRfVadNAq2V2zy2pG2SUv1uDddriD-C_vI82wpF-0pFRhcxDUWu1SjrARO7b_stH952eHuhMjh5IVT-2bLXlYDcXX8VlF0pE_c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
