@@ -20,7 +20,7 @@ class ProductBuyerController extends ApiController
      */
     public function index(Product $product)
     {
-        $this->allowedAdminAction();
+        $this->allowedAdminAction(); // Allow remaining action only admin user can do
 
         $buyers = $product->transactions()
             ->with('buyer')

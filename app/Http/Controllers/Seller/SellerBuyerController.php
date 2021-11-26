@@ -20,7 +20,7 @@ class SellerBuyerController extends ApiController
      */
     public function index(Seller $seller)
     {
-        $this->allowedAdminAction();
+        $this->allowedAdminAction(); // Allow remaining action only admin user can do
 
         $buyers = $seller->products()
             ->whereHas('transactions')

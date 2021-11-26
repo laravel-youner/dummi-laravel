@@ -13,7 +13,7 @@ class SellerController extends ApiController
         parent::__construct(); // Protect all route
 
         $this->middleware('scope:read-general')->only('show'); // OAuth Scope
-//        $this->middleware('can:view,seller')->only('show');
+        $this->middleware('can:view,seller')->only('show'); // Authorization
     }
 
     /**
@@ -23,7 +23,7 @@ class SellerController extends ApiController
      */
     public function index()
     {
-//        $this->allowedAdminAction();
+        $this->allowedAdminAction(); // Allow remaining action only admin user can do
 
         $sellers = Seller::has('products')->get();
 

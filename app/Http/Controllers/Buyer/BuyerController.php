@@ -13,7 +13,7 @@ class BuyerController extends ApiController
         parent::__construct(); // Protect all route
 
         $this->middleware('scope:read-general')->only('index'); // OAuth Scope
-//        $this->middleware('can:view,buyer')->only('show');
+        $this->middleware('can:view,buyer')->only('show'); // Authorization
     }
 
     /**
@@ -23,7 +23,7 @@ class BuyerController extends ApiController
      */
     public function index()
     {
-//        $this->allowedAdminAction();
+        $this->allowedAdminAction(); // Allow remaining action only admin user can do
 
         $buyers = Buyer::has('transactions')->get();
 

@@ -20,7 +20,7 @@ class CategoryBuyerController extends ApiController
      */
     public function index(Category $category)
     {
-        $this->allowedAdminAction();
+        $this->allowedAdminAction(); // Allow remaining action only admin user can do
 
         $buyers = $category->products()
             ->whereHas('transactions')

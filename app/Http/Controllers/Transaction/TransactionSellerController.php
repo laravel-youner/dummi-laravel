@@ -13,7 +13,7 @@ class TransactionSellerController extends ApiController
         parent::__construct(); // Protect all route
 
         $this->middleware('scope:read-general')->only('index'); // OAuth Scope
-        $this->middleware('can:view,transaction')->only('index');
+        $this->middleware('can:view,transaction')->only('index'); // Authorization
     }
 
     /**
